@@ -2,5 +2,20 @@
     "files.associations": {
         "math.h": "c"
     },
-    "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\g++.exe"
+    "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\g++.exe",
+    "cSpell.words": [
+        "acesar",
+        "alterar",
+        "caso",
+        "começa",
+        "conjunto",
+        "contar",
+        "mesmo",
+        "posição",
+        "POSIÇOES",
+        "QUANTIDADE",
+        "TIPO",
+        "variavel",
+        "vetor"
+    ]
 }
