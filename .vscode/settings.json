@@ -2,20 +2,37 @@
     "files.associations": {
         "math.h": "c"
     },
-    "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\g++.exe",
+    "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\gcc.exe",
     "cSpell.words": [
         "acesar",
         "alterar",
+        "auxiliar",
+        "Calcula",
         "caso",
+        "cavalo",
         "começa",
         "conjunto",
         "contar",
+        "digite",
+        "espaço",
+        "fazer",
+        "iremos",
+        "manipulado",
         "mesmo",
+        "mundo",
+        "numero",
+        "pelo",
+        "pois",
+        "polígono",
         "posição",
         "POSIÇOES",
         "QUANTIDADE",
+        "sobra",
+        "teste",
         "TIPO",
+        "utilizado",
         "variavel",
         "vetor"
-    ]
+    ],
+    "C_Cpp.errorSquiggles": "disabled"
 }

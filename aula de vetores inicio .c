@@ -9,9 +9,11 @@ int main(){
 
  int numero [5]={23,44,55,12,-5};
  //para alterar o valor de uma posição do vetor 
-//numero[2]=67;
- printf("%d",numero[2]);
- 
+numero[2]=67;
+ //printf("%d",numero[2]);
+ printf("digite um numero\n");
+ scanf("%d",&numero[2]);
+  printf("posição2 %d",numero[2]);
     
     return 0;
 }
