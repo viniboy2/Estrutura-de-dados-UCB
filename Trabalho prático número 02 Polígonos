@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+
+// Definição da estrutura Ponto que representa um ponto no plano cartesiano
+typedef struct {
+    float x;
+    float y;
+} Ponto;
+
+// Função para calcular a área de um triângulo dado seus vértices
+float area_triangulo(Ponto primeiro, Ponto segundo, Ponto terceiro) {
+    // Fórmula para calcular a área de um triângulo usando determinante
+    return 0.5 * fabs(primeiro.x * (segundo.y - terceiro.y) + segundo.x * (terceiro.y - primeiro.y) + terceiro.x * (primeiro.y - segundo.y));
+}
+
+// Função para calcular a área de um polígono dado seus vértices
+float area_poligono(Ponto pontos[], int num_pontos) {
+    float area = 0.0;
+    int i;
+
+    // Loop para calcular a área de cada triângulo formado pelos vértices
+    for (i = 1; i < num_pontos - 1; i++) {
+        area += area_triangulo(pontos[0], pontos[i], pontos[i + 1]);
+    }
+
+    return area; // Retorna a soma das áreas dos triângulos
+}
+
+// Função principal do programa
+int main() {
+    FILE *documento; // Declaração do ponteiro para o arquivo
+    int num_pontos, i;
+    float area;
+    Ponto *pontos; // Ponteiro para armazenar os vértices do polígono
+
+    // Abertura do arquivo para leitura
+    documento = fopen("trianguloABC.txt", "r");
+
+    // Verifica se o arquivo foi aberto corretamente
+    if (documento == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return 1;
+    }
+
+    // Leitura do número de vértices do polígono a partir do arquivo
+    fscanf(documento, "%d", &num_pontos);
+
+    // Alocação de memória dinâmica para armazenar os vértices do polígono
+    pontos = (Ponto *)malloc(num_pontos * sizeof(Ponto));
+
+    // Leitura dos vértices do polígono a partir do arquivo
+    for (i = 0; i < num_pontos; i++) {
+        fscanf(documento, "%f %f", &pontos[i].x, &pontos[i].y);
+    }
+
+    // Fechamento do arquivo após a leitura
+    fclose(documento);
+
+    // Chamada da função para calcular a área do polígono
+    area = area_poligono(pontos, num_pontos);
+
+    // Impressão da área calculada na tela
+    printf("A area do poligono e: %.2f\n", area);
+
+    // Liberação da memória alocada para armazenar os vértices do polígono
+    free(pontos);
+
+    return 0; // Indicação de que o programa foi executado com sucesso
+}
